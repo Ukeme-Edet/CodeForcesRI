@@ -21,11 +21,11 @@ def print(*args, sep=" ", end="\n"):
 
 def main():
     n, k = [int(x) for x in input().split()]
-    ct =cc = 0
+    ct = cc = 0
     in_rest = []
     for _ in range(n):
         a, b, c = [int(x) for x in input().split()]
-        while cc + c > k and in_rest :
+        while cc + c > k and in_rest:
             et, cc_ = heappop(in_rest)
             cc -= cc_
             ct = max(ct, et)
