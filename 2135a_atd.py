@@ -24,9 +24,9 @@ def main():
         n = int(input())
         a = input().split()
         dp = [0] * (n + 1)
-        st, sr = defaultdict(deque),{}
+        st, sr = defaultdict(deque), defaultdict(int)
         for i in range(n):
-            if a[i] not in sr:
+            if sr[a[i]] == 0:
                 sr[a[i]] = int(a[i])
             sr[a[i]] -= 1
             st[a[i]].append(i)
