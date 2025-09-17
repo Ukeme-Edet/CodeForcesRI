@@ -23,9 +23,9 @@ def main():
     l = [int(x) for x in input().split()]
     res = 0
     if 0 in l[:r]:
-        res += l[:r].count(0) + l[l.index(0, 0, r):r].count(1) * 2
+        res += l[:r].count(0) + l[l.index(0, 0, r) : r].count(1) * 2
     if 0 in l[r:]:
-        res += l[r:].count(0) + l[r:n-l[::-1].index(0)-1].count(1) * 2
+        res += l[r:].count(0) + l[r : n - l[::-1].index(0) - 1].count(1) * 2
     print(res)
 
 

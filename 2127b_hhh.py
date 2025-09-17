@@ -35,7 +35,7 @@ def main():
                         x
                         - 1
                         - (s[: x - 1][::-1].index("#") if "#" in s[: x - 1] else x - 1),
-                        n - x - (s[x:].index("#") if "#" in s[x:] else n - x)
+                        n - x - (s[x:].index("#") if "#" in s[x:] else n - x),
                     ),
                     min(n - x, x - 1),
                 )
