@@ -8,7 +8,6 @@
 @copyright: Copyright (c) 2025
 """
 
-from collections import defaultdict
 from sys import stdin, stdout
 
 

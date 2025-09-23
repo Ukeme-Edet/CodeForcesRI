@@ -7,7 +7,6 @@
 
 @copyright: Copyright (c) 2025
 """
-from collections import Counter
 from sys import stdin, stdout
 
 
