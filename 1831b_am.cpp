@@ -30,28 +30,20 @@ int main(void) {
 
     cin >> t;
     while (t--) {
-        cin >> n, cc = 0, prev = -1, cvs.clear();
+        cin >> n, cc = prev = 0, cvs.clear();
         for (i = 0; i < n; i++) {
             cin >> curr;
-            if (curr != prev) {
-                cvs[prev].first = max(cvs[prev].first, cc);
-                cc = 0;
-            }
-            cc++;
+            cc = (curr == prev ? cc : 0) + 1;
+            cvs[curr].first = max(cvs[curr].first, cc);
             prev = curr;
         }
-        cvs[prev].first = max(cvs[prev].first, cc);
-        cc = 0;
+        cc = prev = 0;
         for (i = 0; i < n; i++) {
             cin >> curr;
-            if (curr != prev) {
-                cvs[prev].second = max(cvs[prev].second, cc);
-                cc = 0;
-            }
-            cc++;
+            cc = (curr == prev ? cc : 0) + 1;
+            cvs[curr].second = max(cvs[curr].second, cc);
             prev = curr;
         }
-        cvs[prev].second = max(cvs[prev].second, cc);
         res = 0;
         for (const auto &[_, y] : cvs)
             res = max(res, y.first + y.second);
